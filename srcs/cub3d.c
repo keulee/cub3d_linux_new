@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 15:30:05 by keulee            #+#    #+#             */
-/*   Updated: 2021/05/19 23:25:45 by keulee           ###   ########.fr       */
+/*   Updated: 2021/05/28 14:53:48 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main_loop(t_game *game)
 {
 	ray_processing(game);
-	sprite_ray_processing(game);
+	//sprite_ray_processing(game);
 	render_screen(game);
 	return (0);
 }
@@ -41,9 +41,9 @@ int	main(int ac, char **av)
 	read_map(&game, game.info.line);
 	map_validation_check(&game);
 	game_init(&game);
-	if (game.save == OFF)
+	//if (game.save == OFF)
 		game_set_go(&game);
-	else if (game.save == ON)
-		make_bmp_screenshot(&game);
+	//else if (game.save == ON)
+	//	make_bmp_screenshot(&game);
 	return (EXIT_SUCCESS);
 }

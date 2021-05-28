@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 15:31:10 by keulee            #+#    #+#             */
-/*   Updated: 2021/05/19 23:29:20 by keulee           ###   ########.fr       */
+/*   Updated: 2021/05/28 14:47:27 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	load_texture(t_game *game)
 	load_img(game, game->info.texture[TEX_SOUTH],
 		game->info.tex_path[TEX_SOUTH], &img);
 	free(game->info.tex_path[TEX_SOUTH]);
-	load_img(game, game->info.texture[TEX_SPRITE],
-		game->info.tex_path[TEX_SPRITE], &img);
-	free(game->info.tex_path[TEX_SPRITE]);
+	//load_img(game, game->info.texture[TEX_SPRITE],
+	//	game->info.tex_path[TEX_SPRITE], &img);
+	//free(game->info.tex_path[TEX_SPRITE]);
 }
 
 void	load_img(t_game *game, int *texture, char *path, t_img *img)

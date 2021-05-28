@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub01_info_validation_check.c                      :+:      :+:    :+:   */
+/*   cub02_info_validation_check.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keulee <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 15:24:35 by keulee            #+#    #+#             */
-/*   Updated: 2021/05/18 16:09:46 by keulee           ###   ########.fr       */
+/*   Updated: 2021/05/28 14:55:15 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	file_validation_check(int ac, char **av, t_game *game)
 {
-	game->save = OFF;
+	//game->save = OFF;
 	if (ac < 2 || ac > 3)
 		error_msg("ERROR: Argument Not Enough or Too Many");
 	if ((ac == 2 || ac == 3) && ft_strstr_cub(av[1], ".cub") != 1)
 		error_msg("ERROR: Wrong .cub Extension");
 	if (ac == 3 && ft_strcmp(av[2], "--save") != 0)
 		error_msg("ERROR: --save argument not corrected");
-	else if (ac == 3 && ft_strcmp(av[2], "--save") == 0)
-		game->save = ON;
+	//else if (ac == 3 && ft_strcmp(av[2], "--save") == 0)
+	//	game->save = ON;
 }
 
 void	info_validation_check(t_game *game)
@@ -34,8 +34,7 @@ void	info_validation_check(t_game *game)
 	if (game->info.floor_color == -1 || game->info.ceiling_color == -1)
 		error_msg("ERROR: Color Info missing");
 	if (!game->info.tex_path[TEX_NORTH] || !game->info.tex_path[TEX_SOUTH]
-		|| !game->info.tex_path[TEX_WEST] || !game->info.tex_path[TEX_EAST]
-		|| !game->info.tex_path[TEX_SPRITE])
+		|| !game->info.tex_path[TEX_WEST] || !game->info.tex_path[TEX_EAST])
 		error_msg("ERROR: Texture Info missing");
 }
 
@@ -59,7 +58,7 @@ void	linux_resolution_max_min_check(t_game *game)
 		game->info.win_height = r_height;
 		check = 1;
 	}
-	if (check == 1 && game->save == OFF)
+	if (check == 1)
 		printf("INFO: Window resized as : %d %d\n",
 			game->info.win_width, game->info.win_height);
 }

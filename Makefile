@@ -6,7 +6,7 @@
 #    By: keulee <keulee@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/17 18:18:39 by keulee            #+#    #+#              #
-#    Updated: 2021/05/18 22:34:24 by keulee           ###   ########.fr        #
+#    Updated: 2021/05/28 14:40:26 by keulee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,15 +17,16 @@ SRCS = srcs/cub3d.c \
 		srcs/cub3d_utiles_01.c srcs/cub3d_utiles_02.c \
 		srcs/cub3d_keypress.c srcs/cub3d_set_tex_img.c \
 		srcs/cub3d_render.c srcs/cub3d_player_move.c \
-		srcs/cub3d_bmp_screenshot.c \
 		srcs/cub01_init.c \
 		srcs/cub02_info_validation_check.c \
 		srcs/cub03_read_info.c srcs/cub03_parsing_resolution.c srcs/cub03_parsing_color.c \
 		srcs/cub04_read_map.c srcs/cub04_create_player.c \
 		srcs/cub05_map_validation_check.c \
 		srcs/cub06_ray.c \
-		srcs/cub07_sort_sprite.c srcs/cub07_sprite_ray.c srcs/cub07_set_sprite.c \
 		srcs/cub06_ray_processing.c
+		#srcs/cub07_sort_sprite.c srcs/cub07_sprite_ray.c srcs/cub07_set_sprite.c \
+		#srcs/cub3d_bmp_screenshot.c \
+
 
 OBJS = $(SRCS:.c=.o)
 
@@ -41,7 +42,7 @@ LIBFT = libft.a
 
 RM = rm -f
 
-BMP = screenshot.bmp
+#BMP = screenshot.bmp
 
 all: $(NAME)
 
@@ -64,7 +65,7 @@ clean:
 fclean: clean
 	$(MAKE) -C libft fclean
 	$(RM) $(NAME) $(MINILIB) $(LIBFT)
-	$(RM) $(BMP)
+	#$(RM) $(BMP)
 
 re: fclean all
 

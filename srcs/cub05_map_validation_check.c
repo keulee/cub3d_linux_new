@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub05_map_validation_check.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keulee <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 15:28:51 by keulee            #+#    #+#             */
-/*   Updated: 2021/05/18 15:28:52 by keulee           ###   ########.fr       */
+/*   Updated: 2021/05/28 14:52:56 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	map_validation_check(t_game *game)
 {
-	if (game->map.count_sprite == 0)
-		error_msg("ERROR: Sprite missing (None)");
+	// if (game->map.count_sprite == 0)
+	// 	error_msg("ERROR: Sprite missing (None)");
 	if (game->player.dir == '\0')
 		error_msg("ERROR: Player position missing");
 	if (game->map.width_count == 0 || game->map.height_count == 0)

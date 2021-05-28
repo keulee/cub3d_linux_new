@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 15:29:43 by keulee            #+#    #+#             */
-/*   Updated: 2021/05/19 23:24:50 by keulee           ###   ########.fr       */
+/*   Updated: 2021/05/28 14:48:21 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,20 @@ void	sprite_y_line_draw(t_game *game, t_s_ray *s_ray, int *y, int *stripe)
 			game->buf[*y][*stripe] = color;
 		(*y)++;
 	}
+}
+
+void	malloc_sprite_utile(t_game *game)
+{
+	game->map.sprite = (t_sprite *)ft_calloc((game->map.count_sprite),
+			sizeof(t_sprite));
+	if (!(game->map.sprite))
+		error_msg("ERROR: Array(t_sprite) malloc failed");
+	game->map.sprite_order = (int *)ft_calloc((game->map.count_sprite),
+			sizeof(int));
+	if (!(game->map.sprite_order))
+		error_msg("ERROR: Array(sprite_order) malloc failed");
+	game->map.sprite_dist = (double *)ft_calloc((game->map.count_sprite),
+			sizeof(double));
+	if (!(game->map.sprite_dist))
+		error_msg("ERROR: Array(sprite_dist) malloc failed");
 }

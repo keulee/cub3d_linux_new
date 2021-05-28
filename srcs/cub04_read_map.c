@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 15:28:42 by keulee            #+#    #+#             */
-/*   Updated: 2021/05/19 23:15:52 by keulee           ###   ########.fr       */
+/*   Updated: 2021/05/28 14:52:33 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,8 @@ void	complet_map(t_game *game)
 				create_player(game, i, j);
 				game->map.map[i][j] = '0';
 			}
-			else if (game->map.map[i][j] == '2')
-				game->map.count_sprite++;
+			// else if (game->map.map[i][j] == '2')
+			// 	game->map.count_sprite++;
 			j++;
 		}
 		i++;
