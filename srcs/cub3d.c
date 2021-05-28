@@ -35,7 +35,7 @@ int	main(int ac, char **av)
 	t_game	game;
 
 	all_init(&game);
-	file_validation_check(ac, av, &game);
+	file_validation_check(ac, av);
 	find_info(&game, av);
 	info_validation_check(&game);
 	read_map(&game, game.info.line);

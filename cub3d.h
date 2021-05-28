@@ -186,7 +186,7 @@ void			game_set_go(t_game *game);
 
 int				get_next_line(int fd, char **line);
 
-void			file_validation_check(int ac, char **av, t_game *game);
+void			file_validation_check(int ac, char **av);
 void			info_validation_check(t_game *game);
 void			linux_resolution_max_min_check(t_game *game);
 

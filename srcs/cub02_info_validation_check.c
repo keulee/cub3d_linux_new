@@ -12,7 +12,7 @@
 
 #include "../cub3d.h"
 
-void	file_validation_check(int ac, char **av, t_game *game)
+void	file_validation_check(int ac, char **av)
 {
 	//game->save = OFF;
 	if (ac < 2 || ac > 3)
