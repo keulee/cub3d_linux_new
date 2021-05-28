@@ -1,0 +1,7 @@
+.DS_Store
+*.o
+*.bmp
+libft.a
+cub3D
+cub3D.dSYM/
+libmlx.a
