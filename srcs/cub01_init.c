@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 15:27:47 by keulee            #+#    #+#             */
-/*   Updated: 2021/05/28 14:59:11 by keulee           ###   ########.fr       */
+/*   Updated: 2021/05/28 16:42:24 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,6 @@ void	all_init(t_game *game)
 		i++;
 	}
 	game->z_buffer = NULL;
-	//game->map.sprite_order = NULL;
-	//game->map.sprite_dist = NULL;
-	//game->mini.map = 0;
 	game->mlx = mlx_init();
 	init_player(game);
 	init_map(game);
@@ -42,7 +39,6 @@ void	init_map(t_game *game)
 	game->map.tmp = NULL;
 	game->map.buff = NULL;
 	game->map.map = NULL;
-	//game->map.count_sprite = 0;
 	game->map.width_count = 0;
 	game->map.height_count = 0;
 }
@@ -64,8 +60,6 @@ void	game_init(t_game *game)
 {
 	malloc_z_buffer(game);
 	malloc_buffer(game);
-	//malloc_sprite_utile(game);
-	//init_and_set_sprite(game);
 	load_texture(game);
 	linux_resolution_max_min_check(game);
 	game->img.img_ptr = mlx_new_image(game->mlx, game->info.win_width,

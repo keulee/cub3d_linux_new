@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 15:28:24 by keulee            #+#    #+#             */
-/*   Updated: 2021/05/28 14:59:15 by keulee           ###   ########.fr       */
+/*   Updated: 2021/05/28 16:43:09 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ int	find_and_store_info(t_game *game, char *line)
 		return (store_texture(TEX_WEST, game, line));
 	else if (line[0] == 'E' && line[1] == 'A')
 		return (store_texture(TEX_EAST, game, line));
-	// else if (line[0] == 'S' && line[1] == ' ')
-	// 	return (store_texture(TEX_SPRITE, game, line));
 	else if (line[0] == 'F' && line[1] == ' ')
 		return (store_color(FLOOR, game, line));
 	else if (line[0] == 'C' && line[1] == ' ')

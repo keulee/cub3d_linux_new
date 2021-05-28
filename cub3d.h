@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 18:18:57 by keulee            #+#    #+#             */
-/*   Updated: 2021/05/28 14:59:13 by keulee           ###   ########.fr       */
+/*   Updated: 2021/05/28 16:41:25 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 # include "./libft/libft.h"
 
 # define TITLE					"CUB3D"
-//# define BMP_NAME				"screenshot.bmp"
 # define TEX_WIDTH				64
 # define TEX_HEIGHT				64
 
@@ -52,40 +51,10 @@
 # define TEX_SOUTH 				1
 # define TEX_WEST 				2
 # define TEX_EAST 				3
-//# define TEX_SPRITE 			4
 # define RESOLUTION 			6
 # define FLOOR 					7
 # define CEILING				8
 # define MAP 					9
-//# define SPRITE					10
-
-/*typedef struct s_pair{
-	double		first;
-	int			second;
-}				t_pair;*/
-
-/*typedef struct s_sprite{
-	double		x;
-	double		y;
-}				t_sprite;*/
-
-/*typedef struct s_sprite_ray{
-	double		x;
-	double		y;
-	double		transform_x;
-	double		transform_y;
-	int			screen_x;
-	double		v_move_screen;
-	int			height;
-	int			width;
-	int			draw_start_x;
-	int			draw_start_y;
-	int			draw_end_x;
-	int			draw_end_y;
-	int			tex_x;
-	int			tex_y;
-	double		inv_det;
-}				t_s_ray;*/
 
 typedef struct s_ray{
 	double		camera_x;
@@ -148,36 +117,23 @@ typedef struct s_img {
 	int			height;
 }				t_img;
 
-/*typedef struct s_minimap{
-	int			map;
-	int			color;
-}				t_minimap;*/
-
 typedef struct s_map{
 	char		*tmp;
 	char		**buff;
 	char		**map;
 	int			width_count;
 	int			height_count;
-	//int			count_sprite;
-	//int			*sprite_order;
-	//double		*sprite_dist;
-	//t_sprite	*sprite;
-	//int			map_2d;
 }				t_map;
 
 typedef struct s_game{
 	void		*mlx;
 	void		*win;
 	int			fd;
-	//int			save;
 	t_info		info;
 	t_map		map;
 	t_img		img;
 	t_player	player;
 	t_ray		ray;
-	//t_minimap	mini;
-	//t_s_ray		sprite_ray;
 	int			**buf;
 	double		*z_buffer;
 }				t_game;
@@ -226,21 +182,6 @@ void			calculate_dist_to_wall(t_game *game);
 void			draw_ray_per_line(t_game *game);
 void			ray_wall_draw(t_game *game, int x);
 
-/*void			sort_sprite_by_distance(t_map *m, t_player *p);
-void			sort_sprites(int *sprite_order,
-					double *sprite_dist, int sprite_count);
-void			sort_sprite_order(t_pair *orders, int sprite_count);
-void			sprite_ray_processing(t_game *game);
-void			sprite_draw(t_game *game, t_s_ray *s_ray);
-void			sprite_y_line_draw(t_game *game, t_s_ray *s_ray, int *y,
-					int *stripe);
-void			translate_sprite(t_game *game, t_player *player,
-					t_s_ray *s_ray, int i);
-void			calculate_sprite_height(t_game *game, t_s_ray *s_ray);
-void			calculate_sprite_width(t_game *game, t_s_ray *s_ray);
-void			init_and_set_sprite(t_game *game);
-void			sprite_pos(t_game *game, int i, int x, int y);*/
-
 int				ft_exit_key(t_game *game);
 void			error_msg(char *str);
 void			exit_msg(char *str);
@@ -251,7 +192,6 @@ int				map_component_check(char *line);
 int				empty_line_check(char *line);
 void			malloc_buffer(t_game *game);
 void			malloc_z_buffer(t_game *game);
-//void			malloc_sprite_utile(t_game *game);
 
 int				ft_keypress(int key, t_game *game);
 void			rotate_left(t_player *player);
@@ -264,11 +204,6 @@ void			move_right(t_game *game, t_player *player);
 
 void			render_ceiling_and_floor(t_game *game);
 void			render_screen(t_game *game);
-
-/*void			make_bmp_screenshot(t_game *game);
-void			set_bmp_header(t_game *game, int file_size, int fd);
-void			set_bmp_info(t_game *game, int fd);
-void			write_bmp_data(t_game *game, int fd);*/
 
 void			load_texture(t_game *game);
 void			load_img(t_game *game, int *texture, char *path, t_img *img);

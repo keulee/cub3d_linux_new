@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 15:24:35 by keulee            #+#    #+#             */
-/*   Updated: 2021/05/28 14:55:15 by keulee           ###   ########.fr       */
+/*   Updated: 2021/05/28 16:42:42 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,10 @@
 
 void	file_validation_check(int ac, char **av)
 {
-	//game->save = OFF;
 	if (ac != 2)
 		error_msg("ERROR: Argument Not Enough or Too Many");
 	if (ac == 2 && (ft_strstr_cub(av[1], ".cub")) != 1)
 		error_msg("ERROR: Wrong .cub Extension");
-	//if (ac == 3 && ft_strcmp(av[2], "--save") != 0)
-	//	error_msg("ERROR: --save argument not corrected");
-	//else if (ac == 3 && ft_strcmp(av[2], "--save") == 0)
-	//	game->save = ON;
 }
 
 void	info_validation_check(t_game *game)
