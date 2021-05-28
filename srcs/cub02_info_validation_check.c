@@ -15,12 +15,12 @@
 void	file_validation_check(int ac, char **av)
 {
 	//game->save = OFF;
-	if (ac < 2 || ac > 3)
+	if (ac != 2)
 		error_msg("ERROR: Argument Not Enough or Too Many");
-	if ((ac == 2 || ac == 3) && ft_strstr_cub(av[1], ".cub") != 1)
+	if (ac == 2 && (ft_strstr_cub(av[1], ".cub")) != 1)
 		error_msg("ERROR: Wrong .cub Extension");
-	if (ac == 3 && ft_strcmp(av[2], "--save") != 0)
-		error_msg("ERROR: --save argument not corrected");
+	//if (ac == 3 && ft_strcmp(av[2], "--save") != 0)
+	//	error_msg("ERROR: --save argument not corrected");
 	//else if (ac == 3 && ft_strcmp(av[2], "--save") == 0)
 	//	game->save = ON;
 }
