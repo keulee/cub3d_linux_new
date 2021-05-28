@@ -29,7 +29,7 @@ OBJS = $(SRCS:.c=.o)
 
 CC = clang
 
-CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -g3 #-fsanitize=address
 
 MLX = -L. -lft -L. -lmlx -lm -lbsd -lX11 -lXext
 
