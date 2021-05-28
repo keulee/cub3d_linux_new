@@ -50,11 +50,11 @@ void	put_player_position(t_game *game)
 	if (game->player.dir == 'N')
 		degree = 270;
 	else if (game->player.dir == 'W')
-		degree = 180;
+		degree = 0;
 	else if (game->player.dir == 'S')
 		degree = 90;
 	else if (game->player.dir == 'E')
-		degree = 0;
+		degree = 180;
 	rotate_player(&game->player, degree_to_radian(degree));
 }
 
