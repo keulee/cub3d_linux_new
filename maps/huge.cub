@@ -1,6 +1,6 @@
 R 1920 1080
 NO ./Texture/redbrick.xpm
-SO ./Texture/tile2.xpm
+SO ./Texture/bluestone.xpm
 WE ./Texture/eagle.xpm
 EA ./Texture/tile4.xpm
 
